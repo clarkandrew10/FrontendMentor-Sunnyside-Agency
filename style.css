@@ -1,0 +1,642 @@
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Root
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+:root {}
+
+html {}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Content sectioning
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+h1 {
+    color: #fff;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 50px;
+    letter-spacing: 7px;
+}
+
+h2 {}
+
+h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 28px;
+
+}
+
+h4 {}
+
+h5 {}
+
+h6 {}
+
+p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+header {}
+
+nav {}
+
+nav ul,
+nav ol {}
+
+nav li {}
+
+
+
+nav a:visited {}
+
+nav a:hover {}
+
+nav a:active {}
+
+main {}
+
+article {}
+
+section {}
+
+aside {}
+
+footer {}
+
+address {}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Text block content
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* Overall styling, e.g. vertical spacing */
+p,
+ol,
+ul,
+pre,
+blockquote,
+figure,
+hr,
+dl {}
+
+p {
+    line-height: 40px;
+}
+
+ol,
+ul {}
+
+ol {}
+
+ul {}
+
+li {}
+
+ol ol,
+ol ul,
+ul ul,
+ul ol {}
+
+li li {}
+
+pre {}
+
+pre code {}
+
+pre samp {}
+
+blockquote {}
+
+figure {}
+
+figcaption {}
+
+hr {}
+
+dl {}
+
+dt {}
+
+dd {}
+
+.mob {
+    display: block;
+}
+
+.desk {
+    display: none;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Custom Styling
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/****************
+ 	Top Nav
+*****************/
+nav a {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+
+nav #contact-btn {
+    color: #000;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 13px;
+    background-color: #fff;
+    border-radius: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+
+
+.topnav {
+    overflow: hidden;
+    grid-column: 1/5;
+    grid-row: 2/4;
+    z-index: 9999;
+    padding: 20px;
+
+}
+
+a.icon {
+    grid-column: 4;
+    grid-row: 1;
+    z-index: 999;
+    margin: auto;
+}
+
+
+
+/* Style the links inside the navigation bar */
+.nav-links a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: .3s;
+    text-align: center;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover:not(#contact-btn),
+a.icon:hover {
+    opacity: .5;
+}
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+
+
+@media screen and (max-width: 600px) {
+    .nav-links {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .topnav a {
+        display: none;
+    }
+
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+
+    .topnav.responsive a:not(.icon) {
+        color: #000;
+        float: none;
+        display: block;
+        margin-left: 8rem;
+        margin-right: 8rem;
+    }
+
+    .topnav.responsive .nav-links {
+        background-color: #fff;
+    }
+
+    nav #contact-btn {
+        background-color: hsl(51, 100%, 49%);
+        padding: 15px;
+    }
+
+    .topnav.responsive::before {
+        content: "";
+        position: absolute;
+        border-style: solid;
+        border-width: 30px 23px 0px 0;
+        border-color: transparent #fff transparent transparent;
+        top: 0;
+        right: 20px;
+
+    }
+
+}
+
+/****************
+ 	Main Hero
+*****************/
+
+.hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 80px 150px 1fr 1fr;
+}
+
+
+.hero-wrapper .bg {
+    width: 100%;
+    max-height: 100vh;
+    grid-column: 1/ span 4;
+    grid-row: 1/ span 4;
+}
+
+.hero-wrapper .logo {
+    /*grid-column: 1;*/
+    grid-row: 1;
+    grid-column: 1/3;
+    z-index: 999;
+    padding: 30px;
+}
+
+.hero-wrapper h1 {
+    text-align: center;
+    grid-row: 2;
+    grid-column: 1/5;
+    margin: auto;
+}
+
+.hero-wrapper .arrow {
+    /*Arrow*/
+    grid-row: 3;
+    grid-column: 2/4;
+    z-index: 999;
+    margin: auto;
+}
+
+/****************
+ Staggered Gallery
+*****************/
+
+.staggered-gallery h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 0px;
+}
+
+.staggered-gallery p {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    opacity: .5;
+}
+
+.staggered-gallery a {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+.staggered-gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.underline:after {
+    position: absolute;
+    content: '';
+    height: 6px;
+    bottom: 1px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /*background: yellow;*/
+    border-radius: 10px;
+    z-index: -999;
+    opacity: .5;
+    transition: .3s;
+}
+
+.one .underline:after {
+    background: hsl(51, 100%, 49%);
+
+}
+
+.two .underline:last-of-type:after {
+    background: hsl(7, 99%, 70%);
+}
+
+.underline:hover:after {
+    opacity: 1;
+}
+
+.staggered-gallery {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+    grid-template-rows: 600 600 600px;
+}
+
+.gallery-copy {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 1fr;
+    text-align: center;
+    padding: 50px;
+}
+
+.gallery-copy :is(.copy-header, .copy-body, .copy-btn) {
+    grid-column: 2;
+}
+
+.first {
+    grid-row: 1;
+}
+
+.gallery-img img {
+    margin-bottom: -5px;
+}
+
+.gallery-img-overlay {
+    display: grid;
+    grid-template-rows: 1fr 300px;
+
+}
+
+.gallery-img-overlay img {
+    grid-column: 1;
+    grid-row: 1/4;
+}
+
+.gallery-img-overlay h3 {
+    opacity: .6;
+    margin: 0px;
+}
+
+.gallery-img-overlay .overlay-body {
+    margin: auto;
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+
+}
+
+/****************
+  Testimonials
+*****************/
+
+.testimonial-header {
+    width: 100%;
+    text-align: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 4px;
+    opacity: .5;
+    margin-top: 5rem;
+}
+
+.testimonial-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.testimonial {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 20px;
+}
+
+.testimonial img {
+    border-radius: 50%;
+    max-height: 5rem;
+
+}
+
+.testimonial :is(p, img, h3) {
+    text-align: center;
+    
+}
+
+.testimonial :not(p) {
+    margin: auto;
+}
+
+.testimonial-name h3 {
+    font-size: 20px;
+}
+
+.testimonial p {
+    opacity: .7;
+}
+
+.testimonial-name p {
+    margin: 0px;
+    opacity: .5;
+    font-size: 16px;
+}
+
+
+/****************
+  Footer Gallery
+*****************/
+
+.footer-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-gallery img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/****************
+  Footer 
+*****************/
+footer {
+    background-color: rgb(127, 205, 185);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .5fr .5fr 1fr;
+    padding-top: 30px;
+}
+
+.footer-logo,
+.footer-nav,
+.footer-social {
+    margin: auto;
+    padding: 15px;
+}
+.footer-logo svg path{
+	fill: hsl(168, 34%, 41%);
+}
+
+.footer-nav a {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    /*opacity: .4;*/
+    text-decoration: none;
+    color:hsl(168, 34%, 41%);
+    margin-left: 2rem;
+    margin-right: 2rem;
+    transition: .3s;
+}
+
+.footer-social a {
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 25px;
+    
+    text-decoration: none;
+    color:hsl(168, 34%, 41%);
+    transition: .3s;
+}
+.footer-social{
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+}
+.footer-nav a:hover, .footer-social a:hover{
+	color: #fff;
+	opacity: 1;
+}
+
+.attribution{
+	width: 100%;
+	text-align: center;
+	font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+
+}
+
+
+
+/****************
+  Media Queries
+*****************/
+
+@media only screen and (min-width: 992px) {
+    .footer-gallery {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .testimonial {
+        padding: 40px;
+    }
+
+    .testimonial-header {
+        margin-top: 9rem;
+    }
+
+    .testimonial-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+
+    .gallery-img-overlay .overlay-body {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+    .gallery-copy .copy-header {
+        align-self: end;
+    }
+
+    .staggered-gallery {
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+
+    .gallery-copy {
+        text-align: left;
+        padding: 0px;
+        grid-template-columns: .5fr 1fr .5fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .first {
+        grid-row: inherit;
+    }
+
+    .topnav {
+        overflow: hidden;
+        grid-column: 4;
+        grid-row: 1;
+        z-index: 999;
+        margin: auto;
+    }
+
+    nav #contact-btn:hover {
+        color: #fff;
+        background-color: rgb(255, 255, 255, .3);
+    }
+
+    .topnav {
+        grid-column: 3/5;
+        margin: 0px;
+        padding: 20px;
+        justify-self: end;
+    }
+
+    .mob {
+        display: none;
+    }
+
+    .desk {
+        display: block;
+    }
+
+    .hero-wrapper h1 {
+        text-align: center;
+        grid-row: 2;
+        grid-column: 2/4;
+        margin: auto;
+        font-size: 56px;
+    }
